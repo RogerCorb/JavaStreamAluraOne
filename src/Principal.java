@@ -9,5 +9,17 @@ public class Principal {
                 .sorted()
                 .limit(3)
                 .forEach(System.out::println);
+
+        nomes.stream().sorted()
+                .limit(3)
+                .filter(n -> n.startsWith("R")) // nesse caso não retornou nenhum  nome mesmo contendo 2 no array .
+                .map(n -> n.toUpperCase())
+                .forEach(System.out::println);
+
+        nomes.stream().sorted()
+                .limit(3)
+                .filter(n -> n.startsWith("A")) // nesse caso retornou corretament o Ary só continha ele no Array.
+                .map(n -> n.toUpperCase())
+                .forEach(System.out::println);
     }
 }
